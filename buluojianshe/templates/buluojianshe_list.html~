@@ -22,7 +22,11 @@
             <th><center>{{buluojianshe.desc}}</center></th>
             <th><center>{{buluojianshe.manager.username}}</center></th>
           </tr>
-       </div>
+
+
+  
+
+        </div>
         {% endfor %}
         </table>
        </div>

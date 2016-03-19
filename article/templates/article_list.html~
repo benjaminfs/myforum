@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="col-sm-12">
+  <p><a class="btn btn-primary btn-sm" href="{% url 'article_create' buluojianshe.id %}" role="button">发表文章</a></p>
+  <ol class="breadcrumb">
+    <li><a href="{% url 'buluojianshe_list' %}">首页</a></li>
+    <li class="active">{{ buluojianshe.name }}</li>
+  </ol>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>状态</th>
+      <th>标题</th>
+      <th>作者</th>
+      <th>更新时间</th>
+    </tr>
+
+    <tr>
+    <td>{{ article.get_status_display }}</td>
+    <td><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></td>
+    <td>{{ article.owner }}</td>
+    <td>{{ article.last_update_timestamp | date:"Y-M-D H:i:s" }}</td>
+    </tr>
+
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="col-sm-12">
+  <ol class="breadcrumb">
+    <li><a href="{% url 'buluojianshe_list' %}">首页</a></li>
+    <li><a href="{% url 'buluojianshe_list' %}">{{ buluojianshe.name }}</a></li>
+    <li class="active">{{ article.title}}</li>
+  </ol>
+
+  <table class="table table-bordered">
+    <tr>
+    <td>作者</td>
+    <td>文章详情</td>
+    </tr>
+
+     <tr>
+     <td>{{ article.owner }}</td>
+     <td>{{ article.content }}</td>
+     </tr>
+
+  </table>
+</div>
+{% endblock %}

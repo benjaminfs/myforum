@@ -18,5 +18,6 @@ from django.contrib import admin
 admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', "buluojianshe.views.buluojianshe_list")
+    url(r'^article/', include("article.urls")),
+    url(r'^$', "buluojianshe.views.buluojianshe_list", name="buluojianshe_list")
 ]

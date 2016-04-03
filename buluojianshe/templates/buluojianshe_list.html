@@ -9,11 +9,11 @@
   <div class = "buluojiansheItem">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <a href="{% url 'article_list' buluojianshe.id %}" style="font-size:18px">{{buluojianshe.name}}</a>
-        <span class="pull-right">管理员：{{buluojianshe.manager.username}}</span>
+        <a href="{% url 'article_list' buluojianshe.id %}" style="font-size:18px">{{ buluojianshe.name }}</a>
+        <span class="pull-right">管理员：{{ buluojianshe.manager.username }}</span>
       </div>
       <div class="panel-body">
-        {{buluojianshe.desc}}
+        {{ buluojianshe.desc }}
       </div>
     </div>
   </div>

@@ -16,14 +16,14 @@
       <th>作者</th>
       <th>更新时间</th>
     </tr>
-
+    {% for article in articles %}
     <tr>
     <td>{{ article.get_status_display }}</td>
     <td><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></td>
     <td>{{ article.owner }}</td>
     <td>{{ article.last_update_timestamp | date:"Y-M-D H:i:s" }}</td>
     </tr>
-
+    {% endfor%}
   </table>
 </div>
 {% endblock %}

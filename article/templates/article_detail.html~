@@ -4,7 +4,7 @@
 <div class="col-sm-12">
   <ol class="breadcrumb">
     <li><a href="{% url 'buluojianshe_list' %}">首页</a></li>
-    <li><a href="{% url 'buluojianshe_list' %}">{{ buluojianshe.name }}</a></li>
+    <!--<li><a href="{% url 'buluojianshe_list' %}">{{ buluojianshe.name }}</a></li>真tm见鬼了-->
     <li class="active">{{ article.title}}</li>
   </ol>
 

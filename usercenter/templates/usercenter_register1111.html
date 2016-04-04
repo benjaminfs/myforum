@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-sm-3"> &nbsp </div>
+  <div class="col-sm-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Register</h3>
+      </div>
+     <div class="panel-body">
+       <div class="input-group input-group-lg">
+         <span class="input-group-addon" id="sizing-addon1">E-mail: </span>
+         <input type="text" class="form-control" placeholder="please enter your e-mail address" aria-describedby="sizing-addon1">
+       </div>
+       <br />
+       <br />
+       <div class="input-group input-group-lg">
+         <span class="input-group-addon pull-middle" id="sizing-addon1">username:</span>
+         <input type="text" class="form-control" placeholder="please enter your Username" aria-describedby="sizing-addon1">
+       </div>
+       <br />
+       <br />		  
+       <div class="input-group input-group-lg">
+         <span class="input-group-addon" id="sizing-addon1">Password:</span>
+         <input type="text" class="form-control" placeholder="please enter your password" aria-describedby="sizing-addon1">
+       </div>
+       <br />
+       <br />	
+       <div class="input-group input-group-lg">
+         <span class="input-group-addon pull-middle" id="sizing-addon1">Confirm: &nbsp</span>
+         <input type="text" class="form-control" placeholder="please enter your password again" aria-describedby="sizing-addon1">
+       </div>
+       <br />
+       <br />
+       <a href="{% url 'login' %}">Have a account already?GO TO LOGIN...</a>
+       <input type="submit" class="btn btn-primary" value="注册" />
+       <br />
+       <br />          
+    </div>
+  </div>
+<div class="col-sm-3"> &nbsp </div>
+{% endblock %}

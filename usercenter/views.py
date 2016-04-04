@@ -8,10 +8,11 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
-
+from django.contrib.auth import authenticate, login, logout
 from models import ActivateCode
 
 
+# 用户注册
 def register(request):
     error = ""
     if request.method == "GET":
@@ -25,7 +26,7 @@ def register(request):
             error = u"用户名，密码，邮箱均不能为空"
         if password != re_password:
             error = u"两次密码不一致"
-        if User.objeects.filter(username=username).count() > 0:
+        if User.objects.filter(username=username).count() > 0:
             error = u"用户名已经存在"
         if not error:
             user = User.objects.create_user(username=username, email=email, password=password)
@@ -44,8 +45,9 @@ def register(request):
         return redirect(reverse("login"))
 
 
+# 激活用户
 def activate(request, code):
-    query = ActivateCode.objects.filter(code=code, expire_timestamp_gte=datetime.datetime.now())
+    query = ActivateCode.objects.filter(code=code, expire_timestamp__gte=datetime.datetime.now())
     if query.count() > 0:
         code_record = query[0]
         code_record.owner.is_active = True
@@ -53,3 +55,34 @@ def activate(request, code):
         return HttpResponse(u"激活成功")
     else:
         return HttpResponse(u"激活失败")
+
+
+# 用户登录
+def user_login(request):
+    error = []
+    if request.method == 'GET':
+        return render_to_response("login.html", {}, context_instance=RequestContext(request))
+    else:
+        username = request.POST['username'].strip()
+        password = request.POST['password'].strip()
+        user = authenticate(username=username, password=password)
+    if not username or not password:
+        error.append(u"用户名或密码必须填写")
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return render_to_response("buluojianshe_list.html", {}, context_response=RequestContext(request))
+            else:
+                error.append(u"用户未激活")
+        else:
+            error.append(u"用户名或密码错误")
+            return render_to_response("login.html", {"error": error}, context_response=RequestContext(request))
+        return redirect(reverse("login.html"))
+
+
+# 用户退出
+def user_logout(request):
+    if request.method == 'GET':
+        logout(request)
+        return render_to_response("buluojianshe_list.html", {}, context_response=RequestContext(request))
+    return redirect(reverse("buluojianshe_list.html"))

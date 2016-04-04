@@ -10,4 +10,4 @@ class ActivateCode(models.Model):
     expire_timestamp = models.DateTimeField()
 
     create_timestamp = models.DateTimeField(auto_now_add=True)
-    last_update_timestamp = models.DateTimeField(auto_now=True)
+# last_update_timestamp = models.DateTimeField(auto_now=True)

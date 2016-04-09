@@ -106,7 +106,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = "/"
-EMAIL_HOST = 'stmp.163.com'
-EMAIL_PORT = 25
-EMAIL_HOST_UESR = "h1n1china@163.com"
-EMAIL_HOST_PASSWORD = "benjaminfs@1987"
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 465
+EMAIL_HOST_UESR = "705529873@qq.com"
+EMAIL_HOST_PASSWORD = "hnygradjfeglbcgg"
+EMAIL_USE_SSL = True

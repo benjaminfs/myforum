@@ -8,7 +8,8 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
+# logout
 from models import ActivateCode
 
 
@@ -80,9 +81,9 @@ def user_login(request):
         return redirect(reverse("login.html"))
 
 
-# 用户退出
+'''# 用户退出
 def user_logout(request):
     if request.method == 'GET':
         logout(request)
         return render_to_response("buluojianshe_list.html", {}, context_response=RequestContext(request))
-    return redirect(reverse("buluojianshe_list.html"))
+    return redirect(reverse("buluojianshe_list.html"))'''

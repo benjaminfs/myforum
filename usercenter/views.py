@@ -8,8 +8,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
-from django.contrib.auth import authenticate, login
-# logout
+# from django.contrib.auth import authenticate, login, logout
 from models import ActivateCode
 
 
@@ -40,7 +39,7 @@ def register(request):
             code_record.save()
 
             activate_link = "http://%s%s" % (request.get_host(), reverse("usercenter_activate", args=[new_code]))
-            send_mail(u'benjamin激活邮件', u'点击链接进行激活: %s' % activate_link, "h1n1china@163.com", [email], fail_silently=False)
+            send_mail(u"LET'S FUN!激活邮件", u'点击链接进行激活: %s' % activate_link, "705529873@qq.com", [email], fail_silently=False)
         else:
             return render_to_response("usercenter_register.html", {"error": error}, context_instance=RequestContext(request))
         return redirect(reverse("login"))
@@ -58,7 +57,7 @@ def activate(request, code):
         return HttpResponse(u"激活失败")
 
 
-# 用户登录
+'''# 用户登录
 def user_login(request):
     error = []
     if request.method == 'GET':
@@ -78,7 +77,7 @@ def user_login(request):
         else:
             error.append(u"用户名或密码错误")
             return render_to_response("login.html", {"error": error}, context_response=RequestContext(request))
-        return redirect(reverse("login.html"))
+        return redirect(reverse("login.html"))'''
 
 
 '''# 用户退出

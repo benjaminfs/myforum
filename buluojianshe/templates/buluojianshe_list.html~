@@ -16,8 +16,11 @@
 </div>
 {% endfor %}
   {% if user.is_authenticated %}
-    <h3><p>{{ username }},欢迎来到<br />LET'S FUN!</p></h3>
+    <h3><p>{{ user.username }},欢迎来到<br />LET'S FUN!</p></h3>
     <a href="{% url 'user_logout' %}"><br />退出</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'password_change' %}">修改密码</a>
     {% else %}
       <h3><p>匿名,欢迎来到<br />LET'S FUN,<br />请<a href="{% url 'login' %}">登录</a></p></h3>
   {% endif %}

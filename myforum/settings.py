@@ -109,5 +109,6 @@ LOGIN_REDIRECT_URL = "/"
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 465
 EMAIL_HOST_UESR = "705529873@qq.com"
-EMAIL_HOST_PASSWORD = "hnygradjfeglbcgg"
+EMAIL_HOST_PASSWORD = "lbtsztnnbnfvbajh"
 EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = "705529873@qq.com"

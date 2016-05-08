@@ -16,7 +16,15 @@
 </div>
 {% endfor %}
   {% if user.is_authenticated %}
-    <h3><p>{{ user.username }},欢迎来到<br />LET'S FUN!</p></h3>
+ 
+   <span>{{ user.username }}</span>
+        {% if msg_cnt %}
+        <a href="{% url 'message_list' %}"><span class="badge">{{ msg_cnt }}</span></a>
+        {% endif %}
+    <br />
+    <h3>欢迎来到,</h3>
+    
+    <h3><p>LET'S FUN!</p></h3>
     <a href="{% url 'user_logout' %}"><br />退出</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

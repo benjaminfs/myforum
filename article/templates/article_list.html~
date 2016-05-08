@@ -25,13 +25,14 @@
     </tr>
     {% endfor%}
   </table>
-
-  <nav>
+  </br>
+  {% include "component/paginator.html" with param_name="page_no" %}
+<!--  <nav>
       <ul class = "pagination">
         {% if has_previous %}
         <li>
           <a href="?page_no=1" aria-label="Prevoius">
-            <span aria-hidden="true">首页</span>
+            <span aria-hidden="true">第一页</span>
           </a>
         </li>
         <li>
@@ -51,11 +52,11 @@
 	</li>
 	<li>
          <a href="?page_no={{ page_cnt }}" aria-label="Next">
-            <span aira-hidden="true">末页</span>
+            <span aira-hidden="true">最后一页</span>
          </a>
         </li>
         {% endif %}
       </ul>
-  </nav>
+  </nav>-->
 </div>
 {% endblock %}

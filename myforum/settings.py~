@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '39)-_+^eq@8f_56)6e)!-1j7p3koqqf+8#$ui^!ak(i$6zm-^x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -41,8 +41,7 @@ INSTALLED_APPS = (
     'buluojianshe',
     'article',
     'usercenter',
-    'comment',
-    'message'
+    'comment'
 )
 
 MIDDLEWARE_CLASSES = (

@@ -19,6 +19,7 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^article/', include("article.urls")),
+    url(r'^comment/', include("comment.urls")),
     url(r'^usercenter/', include("usercenter.urls")),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^$', "buluojianshe.views.buluojianshe_list", name="buluojianshe_list")
